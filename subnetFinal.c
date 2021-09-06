@@ -13,15 +13,17 @@
 
 /*
 This function will seperate the network IP that connected to the subnet to ipaddr varriable string(char pointer)
-Input: IP address string(char pointer) and subnet string
+and will store the result in ipaddr char array.
+Input: IP addressand subnet string, and an empty string.
 Return: void
 */
 void seperateIp(char * ipAndSub, char * ipaddr);
 
 
 /*
-This function will seperate the subnet mask that connected to the IP to subnetMask varriable string(char pointer)
-Input: IP address string(char pointer) and subnet string
+This function will seperate the subnet mask that connected to the IP to subnetMask varriable string(char pointer) 
+and will store the result in subnetMask string.
+Input: IP address string(char pointer) and an empty string.
 Return: void
 */
 void seperatesubnetMask(char * ipAndSub,char * subnetMask);
@@ -31,16 +33,19 @@ void seperatesubnetMask(char * ipAndSub,char * subnetMask);
 This function will cast each string ip part to int index in array index.
 For example:
 "10.0.0.1" becomes to -> [10, 0, 0, 1]
-IP_PART_LEN constract will be the tmp string buffer to convert to int.
-Input: IP address string(char pointer) and int array that will store the result
+IP_PART_LEN constant will be the tmp string buffer(the tmp string will become each time to int with the function 'atoi()').
+The int array will store the result.
+Input: IP address string(char pointer) and an empty int array.
 Return: void
 */
 void ipToArr(char * ip, int * arr);
 
 
 /*
-This function will seperate the network IP that connected to the subnet to ipaddr varriable string(char pointer)
-Input: ip and subnet string
+This function will take 2 int arrays that contains IP parts and do between the 2 arrays with the suitabe index the &(and) opcode.
+The result between the two will store in result int array.
+For example: [10, 0, 0, 1] & [255, 255, 255, 0] -> [10 & 255, 0 & 255, 0 & 255, 1 & 0]
+Input: IP address int array, subnet int array and empty result int array.
 Return: void
 */
 void andBetweenIP(int * ip, int * subnet, int * result);
