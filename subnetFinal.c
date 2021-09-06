@@ -14,27 +14,27 @@
 /*
 This function will seperate the network IP that connected to the subnet to ipaddr varriable string(char pointer)
 and will store the result in ipaddr char array.
-Input: IP addressand subnet string, and an empty string.
+Input: IP address and subnet string, and an empty string.
 Return: void
 */
 void seperateIp(char * ipAndSub, char * ipaddr);
 
 
 /*
-This function will seperate the subnet mask that connected to the IP to subnetMask varriable string(char pointer) 
-and will store the result in subnetMask string.
-Input: IP address string(char pointer) and an empty string.
+This function will seperate the subnet mask that connected to the IP and will store
+the result in subnetMask string.
+Input: IP address and subnet string, and an empty string.
 Return: void
 */
 void seperatesubnetMask(char * ipAndSub,char * subnetMask);
 
 
 /*
-This function will cast each string ip part to int index in array index.
+This function will convert an string IP presentation to int array IP presentation.
 For example:
 "10.0.0.1" becomes to -> [10, 0, 0, 1]
 IP_PART_LEN constant will be the tmp string buffer(the tmp string will become each time to int with the function 'atoi()').
-The int array will store the result.
+The result will be stored in the int array varriable.
 Input: IP address string(char pointer) and an empty int array.
 Return: void
 */
@@ -43,7 +43,7 @@ void ipToArr(char * ip, int * arr);
 
 /*
 This function will take 2 int arrays that contains IP parts and do between the 2 arrays with the suitabe index the &(and) opcode.
-The result between the two will store in result int array.
+The result between the two will be stored in result int array.
 For example: [10, 0, 0, 1] & [255, 255, 255, 0] -> [10 & 255, 0 & 255, 0 & 255, 1 & 0]
 Input: IP address int array, subnet int array and empty result int array.
 Return: void
@@ -52,24 +52,30 @@ void andBetweenIP(int * ip, int * subnet, int * result);
 
 
 /*
-This function will seperate the network IP that connected to the subnet to ipaddr varriable string(char pointer)
-Input: ip and subnet string
-Return: void
+This function will check if the given arrays are contains the same values.
+If the arrays are contains the same values the function will return 0 (meaning True).
+Else, the function will return 1 (meaning false).
+
+Input: 2 result int arrays
+Return: int that behaves like a boolean: 0 for True and 1 for False
 */
 int checkIfEqual(int * result1, int * result2);
 
 
 /*
-This function will seperate the network IP that connected to the subnet to ipaddr varriable string(char pointer)
-Input: ip and subnet string
+This function will convert the number subnet presentation to ip subnet presentation.
+The function will take the number presentation that stores in maskNum string and will store
+the result in the empty arr int array.
+Input: number subnet presentation string and an empty int array
 Return: void
 */
 void maskToArr(char * maskNum, int * arr);
 
 
 /*
-This function will seperate the network IP that connected to the subnet to ipaddr varriable string(char pointer)
-Input: ip and subnet string
+This function will convert IP address in int array presentation to string presentation.
+The result will be stored in ipaddr string varriable.
+Input: IP int array, and an empty string
 Return: void
 */
 void arrayToIp(int * arr, char * ipaddr);
