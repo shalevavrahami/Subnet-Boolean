@@ -11,20 +11,62 @@
 #define BYTE_LEN 8
 #define MASK_NUM 2
 
-void seperateIp(char * ipAndSub,char * ipaddr);
+/*
+This function will seperate the network IP that connected to the subnet to ipaddr varriable string(char pointer)
+Input: IP address string(char pointer) and subnet string
+Return: void
+*/
+void seperateIp(char * ipAndSub, char * ipaddr);
 
+
+/*
+This function will seperate the subnet mask that connected to the IP to subnetMask varriable string(char pointer)
+Input: IP address string(char pointer) and subnet string
+Return: void
+*/
 void seperatesubnetMask(char * ipAndSub,char * subnetMask);
 
-void ipToArr(char * ip,int * arr);
 
+/*
+This function will cast each string ip part to int index in array index.
+For example:
+"10.0.0.1" becomes to -> [10, 0, 0, 1]
+IP_PART_LEN constract will be the tmp string buffer to convert to int.
+Input: IP address string(char pointer) and int array that will store the result
+Return: void
+*/
+void ipToArr(char * ip, int * arr);
+
+
+/*
+This function will seperate the network IP that connected to the subnet to ipaddr varriable string(char pointer)
+Input: ip and subnet string
+Return: void
+*/
 void andBetweenIP(int * ip, int * subnet, int * result);
 
+
+/*
+This function will seperate the network IP that connected to the subnet to ipaddr varriable string(char pointer)
+Input: ip and subnet string
+Return: void
+*/
 int checkIfEqual(int * result1, int * result2);
 
-void printArr(int * arr);
 
+/*
+This function will seperate the network IP that connected to the subnet to ipaddr varriable string(char pointer)
+Input: ip and subnet string
+Return: void
+*/
 void maskToArr(char * maskNum, int * arr);
 
+
+/*
+This function will seperate the network IP that connected to the subnet to ipaddr varriable string(char pointer)
+Input: ip and subnet string
+Return: void
+*/
 void arrayToIp(int * arr, char * ipaddr);
 
 int main(int argc, char ** argv)
@@ -107,7 +149,7 @@ int main(int argc, char ** argv)
     return 0;
 }
 
-void seperateIp(char * ipAndSub,char * ipaddr)
+void seperateIp(char * ipAndSub, char * ipaddr)
 {
   for (int i = 0, j = 0; i < IP_LEN; i++)
     {
@@ -126,7 +168,7 @@ void seperateIp(char * ipAndSub,char * ipaddr)
         }
     }
 }
-void seperatesubnetMask(char * ipAndSub,char * subnetMask)
+void seperatesubnetMask(char * ipAndSub, char * subnetMask)
 {
     int index = 0, i = 0;
     while (ipAndSub[index] != '/')
@@ -144,7 +186,7 @@ void seperatesubnetMask(char * ipAndSub,char * subnetMask)
     
 }
 
-void ipToArr(char * ip,int * arr)
+void ipToArr(char * ip, int * arr)
 {
     char tmp[IP_PART_LEN] = "";
     for (int i = 0, index = 0, j = 0; i < IP_LEN; i++)
@@ -229,14 +271,6 @@ int checkIfEqual(int * result1, int * result2)
     return 0;
 }
 
-void printArr(int * arr)
-{
-    for (int i = 0; i < ARR_LEN; i++)
-    {
-        printf("%d ",arr[i]);
-    }
-    printf("\n");
-}
 
 void arrayToIp(int * arr, char * ipaddr)
 {
